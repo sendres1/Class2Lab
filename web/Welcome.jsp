@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Welcome    xxx
+    Document   : Welcome
     Created on : Sep 2, 2015, 2:24:12 PM
     Author     : Steven
 --%>
