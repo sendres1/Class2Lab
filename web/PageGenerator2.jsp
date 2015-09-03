@@ -16,6 +16,6 @@
         <p>FORD 18  24</p>
         <p>Chevy 18  24</p>
         <p>DODGE 18  24</p>
-        <p>Servlet PageGenerator at request.getContextPath()</p>;
+        <p>Servlet PageGenerator at <%request.getContextPath();%></p>;
     </body>
 </html>
