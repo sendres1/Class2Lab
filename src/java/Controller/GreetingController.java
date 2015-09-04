@@ -49,7 +49,8 @@ public class GreetingController extends HttpServlet {
         // parameters are name attributes in view pages
         // Here we're retrieving form content from form.html
        // String c = request.getParameter("color");
-        String name = request.getParameter("form1");
+      //  String name = request.getParameter("form1");
+        String name = request.getParameter("name");
         
         // Create a new instance of a model object
         // For some applications, we would not want to create a new one each time.
