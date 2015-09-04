@@ -59,7 +59,12 @@ public class GreetingController extends HttpServlet {
        
         // Always a good idea to trim and/or validate input data
         //List result = be.getBrands(c.trim());
-        String result = ws.createGreeting(name.trim());
+        
+        //List result = ws.createGreeting(name.trim());
+        
+       String s = ws.createGreeting(name.trim());
+       
+       Object result = s;
 
        // i am here
         // Parameters are read only Request object properties, but attributes
