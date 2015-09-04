@@ -14,17 +14,14 @@ import java.util.Calendar;
 public class WelcomeService {
     
     Calendar currentDate ;
+     String timeOfDayGreeting = "";
+        int timeOfDay = 0;
     
     public WelcomeService() {
     }
    
     
-    public String getTOD() {
-//        Calendar currentDate ;
-        String timeOfDayGreeting = "";
-        int timeOfDay = 0;
-       
-        timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
+    public String getTOD() {   
         timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay <= 12) {
