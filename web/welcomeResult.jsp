@@ -40,7 +40,7 @@
             // Notice we're outputting some HTML. Is that a good idea?
             // Also, notice we do not cast the object returned by the
             // iterator to a String. Why?
-            out.print("<br>try: " + item.toString());
+            out.print("<br>message: " + item.toString());
         }
         
         // THIS CODE IS OVERLY COMPLICATED and FRAGILE!!!

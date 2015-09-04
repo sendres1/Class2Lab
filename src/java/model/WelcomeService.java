@@ -40,7 +40,9 @@ public class WelcomeService {
     public List createGreeting(String inputName) {
         List greet = new ArrayList();
         greet.add("tryit");
+        greet.add(inputName + "itis");
         return greet;
+        
         
         //return (getTOD() + "," + inputName + "." + "  Welcome!");
 
