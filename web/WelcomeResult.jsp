@@ -43,7 +43,7 @@
         // See result2.jsp for a better way
     %>
     </p>
-    <p><a href="form.html">Back</a></p>
-    
+    <%-- <p><a href="form.html">Back</a></p>
+    --%>
     </body>
 </html>
