@@ -12,21 +12,16 @@ import java.util.Calendar;
  * @author Steven Endres
  */
 public class WelcomeService {
-
-    //constructor not used
-//    public WelcomeService() { }
-        
-        private String getTOD(){
-        Calendar currentDate = null;
-        String timeOfDayGreeting = null;
-        String inputName;
- 
-        
    
-        int timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
+    
+    private String getTOD() {
+        Calendar currentDate = null;
+        String timeOfDayGreeting = "";
+        int timeOfDay = 0;
+        timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay <= 12) {
-         timeOfDayGreeting = "Good Morning";
+            timeOfDayGreeting = "Good Morning";
         } else if (timeOfDay >= 12 && timeOfDay <= 16) {
             timeOfDayGreeting = "Good Afternoon";
         } else if (timeOfDay >= 16) {
@@ -34,7 +29,6 @@ public class WelcomeService {
         }
         return timeOfDayGreeting;
     }
-
 
     private String createGretting(String inputName) {
         return (getTOD() + "," + inputName + "." + "  Welcome!");
