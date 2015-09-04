@@ -61,8 +61,11 @@ public class GreetingController extends HttpServlet {
         //List result = be.getBrands(c.trim());
         
         //List result = ws.createGreeting(name.trim());
+        String s = ws.createGreeting(name.trim());
+         List result = null;
+         result.add(s);
         
-       String result = ws.createGreeting(name.trim());
+       //String result = ws.createGreeting(name.trim());
        
        //Object result = s;
 

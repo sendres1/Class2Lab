@@ -20,6 +20,9 @@
 
     <%
         // the getAttribute method returns a plain object, not a String or other type
+        
+        
+        
         Object objList = request.getAttribute("welcome");
         List list = null;
         // cannot cast if null
@@ -31,6 +34,7 @@
         } else {
             // cast it
             list = (List)objList;
+         
         }
         for(Object item : list) {
             // Notice we're outputting some HTML. Is that a good idea?
