@@ -5,7 +5,9 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -35,8 +37,12 @@ public class WelcomeService {
         return timeOfDayGreeting;
     }
 
-    public String createGreeting(String inputName) {
-        return (getTOD() + "," + inputName + "." + "  Welcome!");
+    public List createGreeting(String inputName) {
+        List greet = new ArrayList();
+        greet.add("tryit");
+        return greet;
+        
+        //return (getTOD() + "," + inputName + "." + "  Welcome!");
 
     }
 
