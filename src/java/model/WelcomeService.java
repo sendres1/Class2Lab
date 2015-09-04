@@ -22,6 +22,7 @@ public class WelcomeService {
    
     
     public String getTOD() {   
+        currentDate = Calendar.getInstance();
         timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay <= 12) {
