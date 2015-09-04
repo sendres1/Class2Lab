@@ -62,9 +62,9 @@ public class GreetingController extends HttpServlet {
         
         //List result = ws.createGreeting(name.trim());
         
-       String s = ws.createGreeting(name.trim());
+       String result = ws.createGreeting(name.trim());
        
-       Object result = s;
+       //Object result = s;
 
        // i am here
         // Parameters are read only Request object properties, but attributes
