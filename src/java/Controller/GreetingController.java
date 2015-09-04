@@ -17,7 +17,7 @@ import model.WelcomeService;
  */
 @WebServlet(name = "GreetingController", urlPatterns = {"/greeter"})
 public class GreetingController extends HttpServlet {
-     private static final String RESULT_PAGE = "WelcomeResult.jsp";
+     private static final String RESULT_PAGE = "welcomeResult.jsp";
      
       // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /** 
