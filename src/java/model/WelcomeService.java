@@ -30,7 +30,7 @@ public class WelcomeService {
         return timeOfDayGreeting;
     }
 
-    private String createGreeting(String inputName) {
+    public String createGreeting(String inputName) {
         return (getTOD() + "," + inputName + "." + "  Welcome!");
 
     }

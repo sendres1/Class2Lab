@@ -2,11 +2,14 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.WelcomeService;
 
 /**
  *This is the main controller for the Greeting App.
@@ -14,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "GreetingController", urlPatterns = {"/greeter"})
 public class GreetingController extends HttpServlet {
-
-    /**
+     private static final String RESULT_PAGE = "WelcomeResult.jsp";
+     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -26,19 +29,19 @@ public class GreetingController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet GreetingController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet GreetingController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+//        response.setContentType("text/html;charset=UTF-8");
+//        try (PrintWriter out = response.getWriter()) {
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet GreetingController</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet GreetingController at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -67,6 +70,36 @@ public class GreetingController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        response.setContentType("text/html");
+
+        // parameters are name attributes in view pages
+        // Here we're retrieving form content from form.html
+       // String c = request.getParameter("color");
+        String name = request.getParameter("form1");
+        
+        // Create a new instance of a model object
+        // For some applications, we would not want to create a new one each time.
+ //       BeerExpert be = new BeerExpert();
+        WelcomeService ws = new WelcomeService();
+       
+        // Always a good idea to trim and/or validate input data
+        //List result = be.getBrands(c.trim());
+        String result = ws.createGreeting(name.trim());
+
+       // i am here
+        // Parameters are read only Request object properties, but attributes
+        // are read/write. We can use attributes to store data for use on
+        // another page.
+        request.setAttribute("welcome", result);
+        
+        // This object lets you forward both the request and response
+        // objects to a destination page
+        RequestDispatcher view =
+                request.getRequestDispatcher(RESULT_PAGE);
+        view.forward(request, response);
+        
         processRequest(request, response);
     }
 
