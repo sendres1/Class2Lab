@@ -12,12 +12,19 @@ import java.util.Calendar;
  * @author Steven Endres
  */
 public class WelcomeService {
+    
+    Calendar currentDate ;
+    
+    public WelcomeService() {
+    }
    
     
-    private String getTOD() {
-        Calendar currentDate = null;
+    public String getTOD() {
+//        Calendar currentDate ;
         String timeOfDayGreeting = "";
         int timeOfDay = 0;
+       
+        timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
         timeOfDay = currentDate.get(Calendar.HOUR_OF_DAY);
 
         if (timeOfDay <= 12) {
